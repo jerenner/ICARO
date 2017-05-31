@@ -29,7 +29,7 @@ print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), end=space)
 program, *args = sys.argv
 parser = argparse.ArgumentParser(program)
 parser.add_argument("-r", metavar="run_numbers", type=int, help="run numbers"  , nargs='+')
-parser.add_argument("-i", metavar="inputpath"  , type=str, help="input path"   )
+parser.add_argument("-i", metavar="input path" , type=str, help="input path"   )
 parser.add_argument("-o", metavar="database"   , type=str, help="database file", default="$ICARODIR/Alphas/Litetimes.txt")
 parser.add_argument("-c", metavar="comment"    , type=str, help="comments"     , default="")
 parser.add_argument("-p", metavar="plotsfolder", type=str, help="plots folder" )
@@ -37,12 +37,12 @@ parser.add_argument("--save-plots", action="store_true"  , help="store control p
 parser.add_argument("--overwrite" , action="store_true"  , help="overwrite datebase values" )
 
 flags, extras = parser.parse_known_args(args)
-flags.i = os.path.expandvars(flags.i)
-flags.o = os.path.expandvars(flags.o)
-flags.p = os.path.expandvars(flags.p)
+flags.i = os.path.expandvars(flags.i if "i" in flags else "$ALPHASDIR")
+flags.o = os.path.expandvars(flags.o if "o" in flags else "$ICARODIR/icaro/Alphas/Lifetimes.txt")
+flags.p = os.path.expandvars(flags.p if "p" in flags else "./")
 
 run_numbers   = flags.r
-data_filename = flags.i + "/dst_{}.root.h5"
+data_filename = flags.i + "{0}/dst_{0}.root.h5"
 text_filename = flags.o
 run_comment   = flags.c
 plots_folder  = flags.p
