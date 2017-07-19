@@ -4,7 +4,7 @@ import tables as tb
 import pandas as pd
 import invisible_cities.core.fit_functions as fitf
 from   invisible_cities.core.system_of_units_c import units
-from   invisible_cities.core.mpl_functions import set_plot_labels
+#from   invisible_cities.core.mpl_functions import set_plot_labels
 from   invisible_cities.core.core_functions import in_range
 import matplotlib.pyplot as plt
 from   collections import namedtuple
@@ -182,7 +182,7 @@ def profile_and_fit(X, Y, xrange, yrange, nbins, fitpar, label, fitOpt  = "r"):
     plt.errorbar(x=x, xerr=xe, y=y, yerr=sy,
                  linestyle='none', marker='.')
     plt.plot(x, f.fn(x), fitOpt)
-    set_plot_labels(xlabel=label[0], ylabel=label[1], grid=True)
+    #set_plot_labels(xlabel=label[0], ylabel=label[1], grid=True)
     return f, x, y, sy
 
 
@@ -196,7 +196,7 @@ def profile_and_fit_radial(X, Y, xrange, yrange, nbins, fitpar, label, fitOpt="r
     plt.errorbar(x=x, xerr=xe, y=y, yerr=sy,
                  linestyle='none', marker='.')
     plt.plot(x, f.fn(x), fitOpt)
-    set_plot_labels(xlabel=label[0], ylabel=label[1], grid=True)
+    #set_plot_labels(xlabel=label[0], ylabel=label[1], grid=True)
     return f, x, y, sy
 
 
