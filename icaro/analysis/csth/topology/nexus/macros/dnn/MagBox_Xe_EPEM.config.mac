@@ -1,0 +1,22 @@
+### GEOMETRY (Xenon, Hydrogen, SeF6)
+/Geometry/MagBox/gas_name Xenon
+/Geometry/MagBox/pressure 10. bar
+/Geometry/MagBox/mag_intensity 0.0 tesla
+/Geometry/MagBox/max_step_size 1.0 mm
+
+### GENERATOR
+/Generator/ElecPositronPair/min_energy 1.592535 MeV
+/Generator/ElecPositronPair/max_energy 1.592535 MeV
+/Generator/ElecPositronPair/region CENTER
+
+### VERBOSITIES
+/run/verbose 0
+/event/verbose 0
+/tracking/verbose 0
+
+### JOB CONTROL
+/nexus/persistency/hdf5 true
+/nexus/persistency/outputFile /data5/users/user/nextsw/Releases/NEXT_v1_05_01/sources/nexus/nexus_Xe_MagBox_10bar_EPEM.next
+/nexus/persistency/start_id 0
+
+/nexus/random_seed 100242
